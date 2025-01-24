@@ -1,1 +1,1 @@
-# sc-plugin-vmware-vsphere-48
+# sc-plugin-vmware-vsphere-60
