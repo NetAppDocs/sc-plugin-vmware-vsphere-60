@@ -1,0 +1,62 @@
+---
+sidebar: sidebar
+permalink: scpivs44_manage_backups.html
+keywords:
+summary: 'You can rename and delete backups performed by SnapCenter Plug-in for VMware vSphere. You can also delete multiple backups simultaneously.'
+---
+
+= Manage backups
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2020-09-09 12:24:26.866470
+//
+
+[.lead]
+You can rename and delete backups performed by SnapCenter Plug-in for VMware vSphere. You can also delete multiple backups simultaneously.
+
+== Rename backups
+
+You can rename SnapCenter Plug-in for VMware vSphere backups if you want to provide a better name to improve searchability.
+
+.Steps
+
+. Click *Menu* and select the *Hosts and Clusters* menu option, then select a VM, then select the *Configure* tab, and then click *Backups* in the *SnapCenter Plug-in for VMware vSphere* section.
++
+image:scv50_image1.png["vSphere client screen"]
+
+. On the Configure tab, select a backup,  and click *Rename*.
+. On the *Rename Backup* dialog box, enter the new name, and click *OK*.
++
+Do not use the following special characters in VM, datastore, policy, backup, or resource group names:  & * $ # @ ! \ / : * ? " < > - | ; ' , . An underscore character (_) is allowed.
+
+== Delete backups
+
+You can delete SnapCenter Plug-in for VMware vSphere backups if you no longer require the backup for other data protection operations. You can delete one backup or delete multiple backups simultaneously.
+
+.Before you begin
+
+You cannot delete backups that are mounted. You must unmount a backup before you can delete it.
+
+.About this task
+
+Snapshots on secondary storage are managed by your ONTAP retention settings, not by the SnapCenter Plug-in for VMware vSphere. Therefore, when you use the SnapCenter Plug-in for VMware vSphere to delete a backup, Snapshots on primary storage are deleted but Snapshots on secondary storage are not deleted. If a Snapshot still exists on secondary storage, the SnapCenter Plug-in for VMware vSphere retains the metadata associated with the backup to support restore requests. When the ONTAP retention process deletes the secondary Snapshot, then the SnapCenter Plug-in for VMware vSphere deletes the metadata using a purge job, which is executed at regular intervals.
+// BURT 1378132 observation 48, March 2021 Ronya
+
+. Click *Menu* and select the *Hosts and Clusters* menu option, then select a VM, then select the *Configure* tab, and then click *Backups* in the *SnapCenter Plug-in for VMware vSphere* section.
++
+image:scv50_image1.png["vSphere client window"]
+
+. Select one or more backups and click *Delete*.
++
+You can select a maximum of 40 backups to delete.
+
+. Click *OK* to confirm the delete operation.
+// BURT 1378132 observation 49, March 2021 Ronya
+. Refresh the backup list by clicking the refresh icon on the left vSphere menu bar.
