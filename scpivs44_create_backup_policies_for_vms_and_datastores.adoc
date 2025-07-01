@@ -63,10 +63,10 @@ In linked mode, each vCenter has a separate virtual appliance. Therefore, you ca
 * Unsupported characters
 //Updated for BURT 1378132 observation 22, March 2021 Madhulika
 +
-Do not use the following special characters in VM, datastore, cluster, policy, backup, or resource group names: % & * $ # @ ! \ / : * ? " < > - | ; ' , .
+Do not use the following special characters in VM, datastore, cluster, policy, backup, or resource group names: % & * $ # @ ! \ / : * ? " < > - | ; ' , and space.
 +
 An underscore character (_) is allowed.
-
+// SNAPCDOC-359 updates.
 . Specify the frequency settings.
 +
 The policy specifies the backup frequency only. The specific protection schedule for backing up is defined in the resource group. Therefore, two or more resource groups can share the same policy and backup frequency but have different backup schedules.
